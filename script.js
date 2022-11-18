@@ -6,9 +6,10 @@ let dx = 0
 function handleKeyPress (ev) {
 if (ev.code === "Space") {
 
-    dy = -1 }
+    dy = -1
 
-else if (ev.key==="r"){
+spawnItem() 
+} else if (ev.key==="r"){
     player.setAttribute("fill", "red")
 }
 else if (ev.key==="g"){
@@ -18,6 +19,18 @@ else if (ev.key==="g"){
 } else if (ev.code === "ArrowLeft") {
     dx = -1
 }
+
+}
+function spawnItem() {
+
+const NS = "http://www.w3.org/2000/svg"
+const item = document.createElementNS(NS , "circle")
+item.setAttribute("cx", 100 * Math.random())
+item.setAttribute("cy", 20 * Math.random() + 80)
+item.setAttribute("r", 2 )
+item.setAttribute("fill", "black")
+item.setAttribute("class", "item")
+document.querySelector("svg").appendChild(item)
 
 }
 
