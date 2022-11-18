@@ -1,3 +1,7 @@
+
+let dy = 0
+
+
 function handleKeyPress (ev) {
 if (ev.code === "Space") {
 
@@ -16,12 +20,15 @@ else if (ev.key==="g"){
 
 
 function gameLoop() {
+// Update game state
+
+dy = Math.min(dy + 0.05 , 1)
 
 const player = document.querySelector("#player");
 
-let posY = parseInt(player.getAttribute("cy"));
+let posY = parseFloat(player.getAttribute("cy"));
 
-player.setAttribute("cy", posY + 1);
+player.setAttribute("cy", posY + dy);
 
 
 
