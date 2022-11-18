@@ -1,5 +1,6 @@
 
 let dy = 0
+let dx = 0
 
 
 function handleKeyPress (ev) {
@@ -12,6 +13,10 @@ else if (ev.key==="r"){
 }
 else if (ev.key==="g"){
     player.setAttribute("fill", "green")
+} else if (ev.code === "ArrowRight") {
+    dx = 1
+} else if (ev.code === "ArrowLeft") {
+    dx = -1
 }
 
 }
@@ -31,6 +36,11 @@ if (posY > 100 - r - dy) {
 }
 
 player.setAttribute("cy", posY + dy);
+
+let posX = parseFloat(player.getAttribute("cx"));
+player.setAttribute("cx", posX + dx);
+
+
 
 
 
