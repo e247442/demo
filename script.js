@@ -21,6 +21,14 @@ else if (ev.key==="g"){
 
 }
 
+function handleKeyRelease (ev) {
+    if (ev.code === "ArrowRight") {
+dx = 0}
+    else if (ev.code === "ArrowLeft") {
+dx = 0 }
+
+}
+
 
 function gameLoop() {
 // Update game state
@@ -52,3 +60,4 @@ window.requestAnimationFrame(gameLoop);
 gameLoop()
 
 window.onkeydown = handleKeyPress
+window.onkeyup = handleKeyRelease
