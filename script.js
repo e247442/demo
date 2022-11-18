@@ -15,4 +15,21 @@ else if (ev.key==="g"){
 }
 
 
+function gameLoop() {
+
+const player = document.querySelector("#player");
+
+let posY = parseInt(player.getAttribute("cy"));
+
+player.setAttribute("cy", posY + 1);
+
+
+
+
+//loop forever
+window.requestAnimationFrame(gameLoop);
+}
+
+gameLoop()
+
 window.onkeydown = handleKeyPress
